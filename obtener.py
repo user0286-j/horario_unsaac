@@ -27,3 +27,8 @@ def guardar_datos(elemento: list, nombre: str):
     
 
 guardar_datos(listar_cursos(),"cursos")
+
+def obtener_cursos(nombre: str, url: str) -> dict:
+    page = requests.get(url)
+    soup = BeautifulSoup(page.text, "html.parser")
+    elementos = []
