@@ -64,7 +64,7 @@ def generar_horarios_general() -> dict:
             carreras[nombre] = generar_horarios_curso(nombre, url)
         except:
             print(f"Error en {nombre}")
-    direccion = os.path.join("data", "carreras_cursos.csv")
+    direccion = os.path.join("data", "carreras_cursos.json")
     with open(direccion, "w", encoding="utf-8") as f:
         json.dump(carreras, f)
     
