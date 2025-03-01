@@ -28,7 +28,7 @@ def generar_horarios_curso(nombre_curso: str, url: str) -> dict:
             elementos = tabla_cursos[indice].find_all("td")
             #print(elementos[1].text)
             cursos[elementos[1].text] = {
-                "nombre": f"{elementos[2].text} grupo {elementos[1].text[-2]}",
+                "nombre": f"{elementos[2].text} grupo {elementos[1].text[-3]}",
                 "LU": [],
                 "MA": [],
                 "MI": [],
