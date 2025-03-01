@@ -8,11 +8,11 @@
 <body>
     <div class="encabezado">
         <h1>Lista de cursos</h1>
-        <select id="listaCursos" onchange="elegir_carrera()"></select>
+        <select id="listaCarrera" onchange="elegir_carrera()"></select>
     </div>
     <div class="cuerpo">
         <h2 id="nombreCarrera"></h2>
-        <select id="cursosDisponibles"></select>
+        <select id="cursosDisponibles" onchange="elegir_cursos()"></select>
         <ul id="cursosElegidos"></ul>
         <div class="calendario">
             <table id="tablaCalendario">
