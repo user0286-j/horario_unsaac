@@ -25,7 +25,7 @@ function dia(j){
             texto = "Martes";
             break;
         case 3:
-            texto = "Miércoles";
+            texto = "Miercoles";
             break;
         case 4:
             texto = "Jueves";
@@ -34,7 +34,7 @@ function dia(j){
             texto = "Viernes";
             break;
         case 6:
-            texto = "Sábado";
+            texto = "Sabado";
             break;
         default:
             texto = " ";
@@ -117,6 +117,55 @@ function elegir_carrera(){
     });
 }
 
+// añadir en el calendario
+
+function addCalendar(codCurso){
+    // revisamos primeramente el nombre de la carrera
+    nombre_carrera = document.getElementById('listaCarrera').value;
+    const lu = cursos[nombre_carrera][codCurso]["LU"];
+    const ma = cursos[nombre_carrera][codCurso]["MA"];
+    const mi = cursos[nombre_carrera][codCurso]["MI"];
+    const ju = cursos[nombre_carrera][codCurso]["JU"];
+    const vi = cursos[nombre_carrera][codCurso]["VI"];
+    const sa = cursos[nombre_carrera][codCurso]["SA"];
+    console.log(lu);
+    for (let i = 0; i < lu.length; i++){
+        let hora = lu[i];
+        let id = `${hora}Lunes`;
+        document.getElementById(id).innerHTML =codCurso ;
+    }
+
+    for (let i = 0; i < ma.length; i++){
+        let hora = ma[i];
+        let id = `${hora}Martes`;
+        document.getElementById(id).innerHTML =codCurso ;
+    }
+
+    for (let i = 0; i < mi.length; i++){
+        let hora = mi[i];
+        let id = `${hora}Miercoles`;
+        document.getElementById(id).innerHTML =codCurso ;
+    }
+
+    for (let i = 0; i < ju.length; i++){
+        let hora = ju[i];
+        let id = `${hora}Jueves`;
+        document.getElementById(id).innerHTML =codCurso ;
+    }
+
+    for (let i = 0; i < vi.length; i++){
+        let hora = vi[i];
+        let id = `${hora}Viernes`;
+        document.getElementById(id).innerHTML =codCurso ;
+    }
+
+    for (let i = 0; i < sa.length; i++){
+        let hora = sa[i];
+        let id = `${hora}Sabado`;
+        document.getElementById(id).innerHTML =codCurso ;
+    }
+}
+
 function actualizar_cursos_elegidos(){
     select = document.getElementById('cursosElegidos');
     nombre_carrera = document.getElementById("listaCarrera").value;
@@ -140,6 +189,7 @@ function elegir_cursos(){
         // no está elegido
         cursos_elegidos.push(valor);
         console.log(cursos_elegidos);
+        addCalendar(valor);
 
         // actualizando la lista
         actualizar_cursos_elegidos();
