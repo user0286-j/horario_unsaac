@@ -98,6 +98,7 @@ function elegir_carrera(){
     // limpiar
     cursos_elegidos = [];
     actualizar_cursos_elegidos();
+    actualizarCalendario();
 
 
     var valor = document.getElementById("listaCarrera").value;
@@ -180,6 +181,23 @@ function actualizar_cursos_elegidos(){
     }
 }
 
+function actualizarCalendario(){
+    // Limpiar la tabla
+    for (let i = 7; i < 24; i++){
+        document.getElementById(`${i}Lunes`).innerHTML = "";
+        document.getElementById(`${i}Martes`).innerHTML = "";
+        document.getElementById(`${i}Miercoles`).innerHTML = "";
+        document.getElementById(`${i}Jueves`).innerHTML = "";
+        document.getElementById(`${i}Viernes`).innerHTML = "";
+        document.getElementById(`${i}Sabado`).innerHTML = "";
+    }
+
+    for (let i = 0; i < cursos_elegidos.length; i++){
+        addCalendar(cursos_elegidos[i]);
+    }
+}
+
+
 function elegir_cursos(){
     const valor = document.getElementById("cursosDisponibles").value;
     console.log(`${valor}`);
@@ -189,7 +207,7 @@ function elegir_cursos(){
         // no está elegido
         cursos_elegidos.push(valor);
         console.log(cursos_elegidos);
-        addCalendar(valor);
+        actualizarCalendario();
 
         // actualizando la lista
         actualizar_cursos_elegidos();
