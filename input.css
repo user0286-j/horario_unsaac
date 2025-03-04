@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+    --color-*: initial;
+    --color-unsaac-primary: #9b192d;
+    --color-unsaac-secundary: #e7a134;
+    --color-unsaac-white: #fff;
+}
+
+@layer components {
+
+    *{
+        @apply font-mono;
+    }
+
+    .encabezado{
+        background-color: var(--color-unsaac-primary);
+        color: var(--color-unsaac-secundary);
+    }
+
+    h1{
+        @apply text-5xl;
+    }
+
+    select{
+        @apply border;
+    }
+
+    td{
+        @apply border
+    }
+}

@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos Unsaac</title>
+    <link href="./output.css" rel="stylesheet">
 </head>
 <body>
     <div class="encabezado">
         <h1>Lista de cursos</h1>
         <select id="listaCarrera" onchange="elegir_carrera()"></select>
     </div>
+
     <div class="cuerpo">
         <h2 id="nombreCarrera"></h2>
         <select id="cursosDisponibles" onchange="elegir_cursos()"></select>
         <ul id="cursosElegidos"></ul>
+
         <div class="calendario">
             <table id="tablaCalendario">
-
             </table>
         </div>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>

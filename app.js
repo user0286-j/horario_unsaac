@@ -134,36 +134,42 @@ function addCalendar(codCurso){
         let hora = lu[i];
         let id = `${hora}Lunes`;
         document.getElementById(id).innerHTML =codCurso ;
+        document.getElementById(id).classList.add("hover:bg-unsaac-primary");
     }
 
     for (let i = 0; i < ma.length; i++){
         let hora = ma[i];
         let id = `${hora}Martes`;
         document.getElementById(id).innerHTML =codCurso ;
+        document.getElementById(id).classList.add("hover:bg-unsaac-primary");
     }
 
     for (let i = 0; i < mi.length; i++){
         let hora = mi[i];
         let id = `${hora}Miercoles`;
         document.getElementById(id).innerHTML =codCurso ;
+        document.getElementById(id).classList.add("hover:bg-unsaac-primary");
     }
 
     for (let i = 0; i < ju.length; i++){
         let hora = ju[i];
         let id = `${hora}Jueves`;
         document.getElementById(id).innerHTML =codCurso ;
+        document.getElementById(id).classList.add("hover:bg-unsaac-primary");
     }
 
     for (let i = 0; i < vi.length; i++){
         let hora = vi[i];
         let id = `${hora}Viernes`;
         document.getElementById(id).innerHTML =codCurso ;
+        document.getElementById(id).classList.add("hover:bg-unsaac-primary");
     }
 
     for (let i = 0; i < sa.length; i++){
         let hora = sa[i];
         let id = `${hora}Sabado`;
-        document.getElementById(id).innerHTML =codCurso ;
+        document.getElementById(id).innerHTML =codCurso;
+        document.getElementById(id).classList.add("hover:bg-unsaac-primary");
     }
 }
 
