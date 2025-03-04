@@ -24,9 +24,11 @@ def generar_horarios_curso(nombre_curso: str, url: str) -> dict:
     limite: int = len(tabla_cursos)
     indice: int = 0
     while indice < limite:
+        #print(tabla_cursos[indice].find_all("td")[2].text, indice)
         if tabla_cursos[indice].find_all("td")[0].text.isnumeric():
             elementos = tabla_cursos[indice].find_all("td")
-            #print(elementos[1].text)
+            print(elementos[2].text)
+            
             cursos[elementos[1].text] = {
                 "nombre": f"{elementos[2].text} grupo {elementos[1].text[-3]}",
                 "LU": [],
@@ -49,7 +51,9 @@ def generar_horarios_curso(nombre_curso: str, url: str) -> dict:
                 for h in range(int(hora[0]), int(hora[1])):
                     cursos[elementos[1].text][dia].append(h)
                 #cursos[elementos[1].text][dia].append(hora)
+                #print("->",tabla_cursos[indice].find_all("td")[2], indice)
                 indice += 1
+            indice -= 1
             #break
 
         indice += 1
@@ -73,3 +77,4 @@ def generar_horarios_general() -> dict:
     
 
 generar_horarios_general()
+#generar_horarios_curso("INGENIERÍA INFORMÁTICA Y DE SISTEMAS","http://ccomputo.unsaac.edu.pe/index.php?op=catalog&dt=vCvqh09qWpsFXhbExs**")
