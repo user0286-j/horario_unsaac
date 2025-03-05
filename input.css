@@ -30,6 +30,26 @@
         @apply border;
     }
 
+    table{
+        background-color: var(--color-unsaac-primary);
+        @apply border-separate border-spacing-1 border m-5 flex;
+    }
+
+    tbody{
+       background-color: white;
+       @apply m-2 gap-4 grid-cols-7 grow;
+    }
+
+    tr{
+       /* background-color: antiquewhite;*/
+        @apply  flex;
+    }
+
+    td{
+        /*background-color: bisque;*/
+        @apply  px-2 flex-1;
+    }
+
     .curso1{
         background-color: oklch(0.637 0.237 25.331);
     }
