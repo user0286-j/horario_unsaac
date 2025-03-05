@@ -182,9 +182,10 @@ function actualizar_cursos_elegidos(){
     console.log(nombre_carrera);
     const cursos_carrera = cursos[nombre_carrera];
     for (let i = 0; i < cursos_elegidos.length; i++){
-        const curso = document.createElement("ul");
+        const curso = document.createElement("li");
         //console.log(cursos_carrera);
         curso.innerHTML = `${cursos_elegidos[i]} ${cursos_carrera[cursos_elegidos[i]]["nombre"]}`;
+        curso.classList.add(`curso${1 + (i%10)}`);
         select.appendChild(curso);
     }
 }
