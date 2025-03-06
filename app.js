@@ -194,11 +194,17 @@ function actualizarCalendario(){
     // Limpiar la tabla
     for (let i = 7; i < 24; i++){
         document.getElementById(`${i}Lunes`).innerHTML = "";
+        document.getElementById(`${i}Lunes`).className = "";
         document.getElementById(`${i}Martes`).innerHTML = "";
+        document.getElementById(`${i}Martes`).className = "";
         document.getElementById(`${i}Miercoles`).innerHTML = "";
+        document.getElementById(`${i}Miercoles`).className = "";
         document.getElementById(`${i}Jueves`).innerHTML = "";
+        document.getElementById(`${i}Jueves`).className= "";
         document.getElementById(`${i}Viernes`).innerHTML = "";
+        document.getElementById(`${i}Viernes`).className = "";
         document.getElementById(`${i}Sabado`).innerHTML = "";
+        document.getElementById(`${i}Sabado`).className = "";
     }
 
     for (let i = 0; i < cursos_elegidos.length; i++){
