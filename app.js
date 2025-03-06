@@ -58,7 +58,7 @@ function crearCalendario(){
         for (let j = 0; j < 7; j++){
             // creando un <td>
             const celda = document.createElement("td");
-            let texto = `vacío`;
+            let texto = ``;
             let id = `${i}${dia(j)}`;
             //let texto = document.createTextNode(`celda en fila ${i}, columna ${j}`);
             if (i == 6){
@@ -131,48 +131,77 @@ function addCalendar(codCurso, color = 0){
     const sa = cursos[nombre_carrera][codCurso]["SA"];
     console.log(lu);
 
+    let flag = true;
+
     let clase = `curso${(color)%10 + 1}`;
     for (let i = 0; i < lu.length; i++){
         let hora = lu[i];
         let id = `${hora}Lunes`;
-        document.getElementById(id).innerHTML =codCurso ;
+        if (document.getElementById(id).innerHTML != "" && flag){
+            alert(`Curso ${id} se sobrepone al curso ${document.getElementById(id).innerHTML}`);
+            flag = false;
+        }
+        document.getElementById(id).innerHTML = codCurso ;
         document.getElementById(id).classList.add(clase);
+        
+        //console.log(document.getElementById(id).innerHTML);
     }
 
     for (let i = 0; i < ma.length; i++){
         let hora = ma[i];
         let id = `${hora}Martes`;
-        document.getElementById(id).innerHTML =codCurso ;
+        if (document.getElementById(id).innerHTML != "" && flag){
+            alert(`Curso ${id} se sobrepone al curso ${document.getElementById(id).innerHTML}`);
+            flag = false;
+        }
+        document.getElementById(id).innerHTML = codCurso ;
         document.getElementById(id).classList.add(clase);
     }
 
     for (let i = 0; i < mi.length; i++){
         let hora = mi[i];
         let id = `${hora}Miercoles`;
-        document.getElementById(id).innerHTML =codCurso ;
+        if (document.getElementById(id).innerHTML != "" && flag){
+            alert(`Curso ${id} se sobrepone al curso ${document.getElementById(id).innerHTML}`);
+            flag = false;
+        }
+        document.getElementById(id).innerHTML = codCurso ;
         document.getElementById(id).classList.add(clase);
     }
 
     for (let i = 0; i < ju.length; i++){
         let hora = ju[i];
         let id = `${hora}Jueves`;
-        document.getElementById(id).innerHTML =codCurso ;
+        if (document.getElementById(id).innerHTML != "" && flag){
+            alert(`Curso ${id} se sobrepone al curso ${document.getElementById(id).innerHTML}`);
+            flag = false;
+        }
+        document.getElementById(id).innerHTML = codCurso ;
         document.getElementById(id).classList.add(clase);
     }
 
     for (let i = 0; i < vi.length; i++){
         let hora = vi[i];
         let id = `${hora}Viernes`;
-        document.getElementById(id).innerHTML =codCurso ;
+        if (document.getElementById(id).innerHTML != "" && flag){
+            alert(`Curso ${id} se sobrepone al curso ${document.getElementById(id).innerHTML}`);
+            flag = false;
+        }
+        document.getElementById(id).innerHTML = codCurso ;
         document.getElementById(id).classList.add(clase);
     }
 
     for (let i = 0; i < sa.length; i++){
         let hora = sa[i];
         let id = `${hora}Sabado`;
-        document.getElementById(id).innerHTML =codCurso;
+        if (document.getElementById(id).innerHTML != "" && flag){
+            alert(`Curso ${id} se sobrepone al curso ${document.getElementById(id).innerHTML}`);
+            flag = false;
+        }
+        document.getElementById(id).innerHTML = codCurso ;
         document.getElementById(id).classList.add(clase);
     }
+    return 0;
 }
 
 function actualizar_cursos_elegidos(){
