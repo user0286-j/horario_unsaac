@@ -90,6 +90,26 @@ function Init(){
     AddElement()
     crearCalendario()
     console.log(window.location.href);
+    var url = window.location;
+    let params = new URLSearchParams(url.search);
+    let cursos = params.has("courses");
+    if (cursos && params.has("career")){
+        console.log(cursos);
+        let parameter_carrera = params.get("career")
+        let parameter_cursos = params.get("courses").split(",");
+        cursos_elegidos = parameter_cursos;
+        console.log(parameter_carrera);
+        document.getElementById("listaCarrera").value = parameter_carrera;
+        
+        console.log(cursos_elegidos);
+        console.log(document.getElementById("listaCarrera").value);
+        //elegir_carrera();
+        actualizar_cursos_elegidos();
+        actualizarCalendario();
+    }else{
+        elegir_carrera();
+    }
+    //elegir_carrera();
 }
 
 Init()
@@ -171,18 +191,10 @@ function actualizar_cursos_elegidos(){
 function actualizarCalendario(){
     // Limpiar la tabla
     for (let i = 7; i < 24; i++){
-        document.getElementById(`${i}Lunes`).innerHTML = "";
-        document.getElementById(`${i}Lunes`).className = "";
-        document.getElementById(`${i}Martes`).innerHTML = "";
-        document.getElementById(`${i}Martes`).className = "";
-        document.getElementById(`${i}Miercoles`).innerHTML = "";
-        document.getElementById(`${i}Miercoles`).className = "";
-        document.getElementById(`${i}Jueves`).innerHTML = "";
-        document.getElementById(`${i}Jueves`).className= "";
-        document.getElementById(`${i}Viernes`).innerHTML = "";
-        document.getElementById(`${i}Viernes`).className = "";
-        document.getElementById(`${i}Sabado`).innerHTML = "";
-        document.getElementById(`${i}Sabado`).className = "";
+        for (let di = 1; di < 7; di++){
+            document.getElementById(`${i}${dia(di)}`).innerHTML = "";
+            document.getElementById(`${i}${dia(di)}`).className = "";
+        }
     }
 
     for (let i = 0; i < cursos_elegidos.length; i++){
