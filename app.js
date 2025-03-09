@@ -182,9 +182,28 @@ function actualizar_cursos_elegidos(){
     for (let i = 0; i < cursos_elegidos.length; i++){
         const curso = document.createElement("li");
         //console.log(cursos_carrera);
-        curso.innerHTML = `${cursos_elegidos[i]} ${cursos_carrera[cursos_elegidos[i]]["nombre"]}`;
+        curso.innerHTML = `\t<button type="button" style="background: #000; color:#fff; padding: 0px 10px;" onclick="eliminar_curso('${cursos_elegidos[i]}')"><b>X</b></button> \t${cursos_elegidos[i]}\t${cursos_carrera[cursos_elegidos[i]]["nombre"]}`;
         curso.classList.add(`curso${1 + (i%10)}`);
         select.appendChild(curso);
+    }
+}
+
+function saludar(valor){
+    console.log(`'${valor}'`);
+}
+
+function eliminar_curso(codigo){
+    let valor = -1;
+    for (let i = 0; i < cursos_elegidos.length; i++){
+        if (cursos_elegidos[i] == codigo){
+            valor = i;
+            break;
+        }
+    }
+    if (valor != -1){
+        cursos_elegidos.splice(valor,1);
+        actualizar_cursos_elegidos();
+        actualizarCalendario();
     }
 }
 
