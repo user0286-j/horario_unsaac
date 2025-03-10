@@ -27,7 +27,7 @@
     }
 
     td{
-        @apply border;
+        @apply border min-w-15 text-center px-0;
     }
 
     table{

@@ -224,7 +224,7 @@ function actualizarCalendario(){
 
 function elegir_cursos(){
     const valor = document.getElementById("cursosDisponibles").value;
-    console.log(`${valor}`);
+    //console.log(`${valor}`);
 
     // revisamos si lo tenemos en la lista
     if (cursos_elegidos.indexOf(valor) == -1){
