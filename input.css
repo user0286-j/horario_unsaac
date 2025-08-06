@@ -12,27 +12,55 @@
     *{
         @apply font-mono;
     }
-
+    /* Chansy Chansy GAAAAAAAA xd aquí empieza la magia V:*/
+    /* Header responsive */
     .encabezado{
         background-color: var(--color-unsaac-primary);
         color: var(--color-unsaac-secundary);
+        @apply p-4 md:p-6;
     }
 
+    /* Título responsive */
     h1{
-        @apply text-5xl;
+        @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center mb-4;
     }
 
+    /* Selectores responsive */
     select{
-        @apply border;
+        @apply border rounded p-2 w-full block mb-4 text-sm;
+        max-width: 28rem;
+        margin: 0 auto;
     }
 
-    td{
-        @apply border min-w-15 text-center px-0;
+    /* Cuerpo responsive */
+    .cuerpo {
+        @apply px-4 py-2 max-w-7xl mx-auto;
+    }
+
+    /* Nombre de carrera responsive */
+    h2 {
+        @apply text-lg sm:text-xl md:text-2xl text-center mb-4 font-semibold;
+    }
+
+    /* Lista de cursos elegidos responsive */
+    ul {
+        @apply mb-4 max-w-4xl mx-auto;
+    }
+
+    /* Calendario responsive */
+    .calendario {
+        @apply overflow-x-auto;
+        width: 100%;
+        max-width: 100vw;
+        padding: 0 1rem;
     }
 
     table{
         background-color: var(--color-unsaac-primary);
-        @apply border-separate border-spacing-1 border m-5 flex;
+        @apply border-separate border-spacing-1 border flex;
+        margin: 1.25rem auto;
+        width: 100%;
+        min-width: 700px; /* Ancho mínimo para mantener el diseño */
     }
 
     tbody{
@@ -42,12 +70,64 @@
 
     tr{
        /* background-color: antiquewhite;*/
-        @apply  flex;
+        @apply flex;
     }
 
     td{
         /*background-color: bisque;*/
-        @apply  px-2 flex-1;
+        @apply border min-w-15 text-center px-0 px-2 flex-1;
+    }
+
+    /* Responsive para móviles muy pequeños */
+    @media (max-width: 480px) {
+        .encabezado {
+            @apply p-2;
+        }
+        
+        h1 {
+            @apply text-xl;
+        }
+        
+        select {
+            @apply text-xs p-1;
+        }
+        
+        table {
+            margin: 0.5rem auto;
+            border-spacing: 2px;
+        }
+        
+        tbody {
+            @apply m-1 gap-1;
+        }
+        
+        td {
+            font-size: 0.6rem; /* Más pequeño que text-xs */
+            @apply p-0.5;
+            min-width: 60px;
+            line-height: 1.1;
+        }
+        
+        .calendario {
+            padding: 0 0.5rem;
+            margin: 0 -0.5rem;
+        }
+    }
+
+    /* Responsive para tablets */
+    @media (max-width: 768px) {
+        table {
+            margin: 1rem auto;
+        }
+        
+        tbody {
+            @apply m-1.5 gap-2;
+        }
+    }
+
+    /* Footer responsive */
+    footer {
+        @apply text-xs sm:text-sm text-center;
     }
 
     .curso1{
