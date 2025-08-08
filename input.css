@@ -12,7 +12,9 @@
     *{
         @apply font-mono;
     }
-    /* Chansy Chansy GAAAAAAAA xd aquí empieza la magia V:*/
+
+    /* Chansy Chansy aqui empieza la magia xd */
+    /* psdt: no sé por qué no se guardo ni subió los cambios xd */
     /* Header responsive */
     .encabezado{
         background-color: var(--color-unsaac-primary);
@@ -57,15 +59,17 @@
 
     table{
         background-color: var(--color-unsaac-primary);
-        @apply border-separate border-spacing-1 border flex;
+        @apply border-separate border flex;
+        border-spacing: 4px;
         margin: 1.25rem auto;
         width: 100%;
-        min-width: 700px; /* Ancho mínimo para mantener el diseño */
+        min-width: 700px;
     }
 
     tbody{
        background-color: white;
-       @apply m-2 gap-4 grid-cols-7 grow;
+       @apply m-2 gap-4 grow;
+       grid-template-columns: repeat(7, minmax(0, 1fr));
     }
 
     tr{
@@ -74,8 +78,8 @@
     }
 
     td{
-        /*background-color: bisque;*/
-        @apply border min-w-15 text-center px-0 px-2 flex-1;
+        @apply border min-w-15 text-center px-0 flex-1;
+        padding-inline: calc(var(--spacing) * 2);
     }
 
     /* Responsive para móviles muy pequeños */
@@ -102,10 +106,8 @@
         }
         
         td {
-            font-size: 0.6rem; /* Más pequeño que text-xs */
-            @apply p-0.5;
+            @apply text-xs p-0.5;
             min-width: 60px;
-            line-height: 1.1;
         }
         
         .calendario {
